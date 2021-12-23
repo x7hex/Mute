@@ -1,5 +1,8 @@
 $nomention 
-$onlyIf[$guildID!=;] $giveRole[$mentioned[1];MUTE_ROLE_ID]
+
+$onlyIf[$guildID!=;]
+
+$giveRole[$mentioned[1];MUTE_ROLE_ID]
 
 $onlyBotPerms[manageroles;`❌` I need manage roles permission to mute someone!]
 
@@ -9,7 +12,8 @@ $onlyIf[$rolePosition[$highestRole[$authorID]]<$rolePosition[$highestRole[$menti
 
 $onlyIf[$rolePosition[$highestRole[$botID]]<$rolePosition[$highestRole[$mentioned[1]]];> `❌` This user has a higher role position than me!]
 
-$author[$username[$mentioned[1]]#$discriminator[$mentioned[1]]] 
+$author[$username[$mentioned[1]]#$discriminator[$mentioned[1]] Was Muted!] 
+
 $authorIcon[$userAvatar[$mentioned[1]]
 
 $description[`🤬` Reasoning: $replaceText[$replaceText[$checkCondition[$message[2]==];true;No reason.;1];false;$replaceText[$message;$message[1];;1];1]
@@ -17,4 +21,5 @@ $description[`🤬` Reasoning: $replaceText[$replaceText[$checkCondition[$messag
 `⏰` Time: <t:$getTimestamp>]
 
 $color[#36393F]
+
 $endif
